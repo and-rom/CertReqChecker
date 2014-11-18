@@ -1,0 +1,2 @@
+makensis makefile.nsi
+pause
