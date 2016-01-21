@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 import sys, os, codecs, re
 # VAR
 oids_pattern = '((?:[0-9]+\.)+[0-9]+)+'
