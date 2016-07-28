@@ -18,4 +18,4 @@ End Function
 
 Dim objShell
 Set objShell = WScript.CreateObject("WScript.Shell")
-objShell.Run "check.bat " & GetFolder()
+objShell.Run "check.bat " REM & GetFolder()
