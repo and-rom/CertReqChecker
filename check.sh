@@ -23,7 +23,7 @@ batpath=$(dirname $0)
     file_name=${file##*/}
     file_name=${file_name%%.*}
 
-   if [ ! -f $runpath/asn/$file_name ];then
+   if [ ! -f $runpath/asn/$file_name.txt ];then
       dumpasn1 -p $file | sed "s/OBJECT IDENTIFIER '/OBJECT IDENTIFIER unknown (/g;s/'$/)/g" | sed ':l /OBJECT IDENTIFIER/s/\(([^ )]*\)[ ]/\1./;tl' > $runpath/asn/$file_name.txt
    fi
   done
