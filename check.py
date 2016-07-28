@@ -18,7 +18,7 @@ list_dir.sort()
 result_file = open(os.path.join(path, 'result.txt'), 'w')
 
 #global_oids = [line.rstrip() for line in open(os.path.dirname(sys.argv[0]) + '/oid.txt')]
-global_oids = [line.rstrip() for line in open(os.path.join(os.path.dirname(sys.argv[0]), 'oid.txt'))]
+global_oids = [line.rstrip() for line in open(os.path.join(os.path.dirname(os.path.realpath(sys.argv[0])),'oid.txt'))]
 
 # DEF
 def get_oids (data):
