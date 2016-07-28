@@ -6,10 +6,7 @@ OS_SEP = os.path.sep
 
 # VAR
 oids_pattern = '((?:[0-9]+\.)+[0-9]+)+'
-# for certutil (win)
 extKeyUsage_pattern = '.*2\.5\.29\.37.*?(?:SEQUENCE)(.*?)(?:SEQUENCE)(?:.*)'
-# for dumpasn1 (nix)
-extKeyUsage_pattern = '.*2.5.29.37.*?(?:SEQUENCE)(.*?)(?:SEQUENCE)(?:.*)'
 
 path = sys.argv[1]
 
