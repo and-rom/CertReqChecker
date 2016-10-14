@@ -23,8 +23,11 @@ global_oids = [line.rstrip() for line in open(os.path.join(os.path.dirname(os.pa
 # DEF
 def get_oids (data):
 	extKeyUsage = re.search(extKeyUsage_pattern,data,re.MULTILINE|re.DOTALL)
-	oids = re.findall(oids_pattern, extKeyUsage.group(1))
-	return oids
+	if extKeyUsage is not None:
+		oids = re.findall(oids_pattern, extKeyUsage.group(1))
+		return oids
+	else:
+		return False
 
 def compare_oids (oids):
 	errors =[]
@@ -57,7 +60,10 @@ for _file in list_dir:
 	asn_data = asn_file.read()
 
 	oids = get_oids(asn_data)
-	errors = compare_oids(oids)
+	if oids is not False:
+		errors = compare_oids(oids)
+	else:
+		errors = ['error']
 
 	if errors:
 #		error_files = find_errors(_file.rstrip('.txt') + '.req',path + '/req')
