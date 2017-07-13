@@ -21,6 +21,7 @@ result_file = open(os.path.join(path, 'result.txt'), 'w')
 global_oids = [line.rstrip() for line in open(os.path.join(os.path.dirname(os.path.realpath(sys.argv[0])),'oid.txt'))]
 
 # DEF
+## Выбрать все oids из asn файла
 def get_oids (data):
 	extKeyUsage = re.search(extKeyUsage_pattern,data,re.MULTILINE|re.DOTALL)
 	if extKeyUsage is not None:
@@ -29,6 +30,7 @@ def get_oids (data):
 	else:
 		return False
 
+## Сравнить oids со списком разрешенных
 def compare_oids (oids):
 	errors =[]
 	for oid in oids:
