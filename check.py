@@ -58,7 +58,7 @@ for _file in list_dir:
 	oids = []
 
 #	asn_file = codecs.open(path + '/asn/' + _file, 'r', 'cp1251')
-	asn_file = codecs.open(os.path.join(path, 'asn', _file), 'r', 'cp1251')
+	asn_file = codecs.open(os.path.join(path, 'asn', _file), 'r', 'utf8')
 	asn_data = asn_file.read()
 
 	oids = get_oids(asn_data)
